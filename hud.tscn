@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcj2getle4ck"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_5n02x"]
+[ext_resource type="FontFile" uid="uid://b2mq1ckur3xgv" path="res://fonts/Xolonium-Regular.ttf" id="1_t6qf5"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_5n02x")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 78.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_t6qf5")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="MessageLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t6qf5")
+theme_override_font_sizes/font_size = 32
+text = "DODGE THE CREEPS!"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -208.0
+offset_right = 92.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_t6qf5")
+theme_override_font_sizes/font_size = 48
+text = "START"
+
+[node name="MessageTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
